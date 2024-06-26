@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>2023 MHP Parts List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color: rgb(252, 248, 138);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+}
+
+#page-header {
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-shadow: 2px 2px 40px black;
+    margin-top: 20px;
+}
+
+#so-variant-header {
+    font-size: 16px;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+#so-variant {
+    font-size: 14px;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    line-height: 2;
+}
+
+button {
+    background-color: black;
+    color: rgb(252, 248, 138);
+    padding: 5px 5px 5px;
+    margin: 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 25px 9px black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(252, 248, 138);
+}
+
+#search {
+            background-color: black;
+            color: rgb(252, 248, 138);
+            font-size: 20px;
+            padding: 12px 12px 9px 12px; /* Adjust the size of the search box */
+            margin-bottom: 25px;
+            border-radius: 20px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: rgb(252, 248, 138);
+            box-shadow: 10px 10px 25px 9px black;
+        }
+
+input::placeholder {
+    color: rgb(252, 248, 138);
+    font-size: 20px;
+    font-size: italic;
+    text-align: center;
+}
+
+button {
+    background-color: black;
+    color: rgb(252, 248, 138);
+    padding: 5px 15px 5px;
+    margin: 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 25px 9px black;
+}
+
+button:hover {
+    background-color: rgb(50, 50, 50);
+    cursor: pointer;
+}
+
+.attention {
+    animation: blink 1s linear infinite;
+    text-align: center;
+    font-size: 20px;
+}
+
+th {
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    padding: 5px;
+} 
+
+td {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid rgb(25, 148, 138); /*1px solid black*/
+
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr:hover {  /* creates the hover effect for rows */
+    background: black;
+    color:rgb(252, 248, 138);
+    cursor: pointer;
+    transition-duration: 0.80s; /* control speed of hover effect */
+}
+
+#quantity {
+    padding-right: 35px;
+}
+
+@media (max-width: 600px) {
+    table, th, td {
+        display: block;
+    }
+
+    th, td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+}
+
+th::before, td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+}
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.explode {
+    animation: explode 0.5s forwards;
+}
+
+@keyframes explode {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5); opacity: 1;}
+    100% {transform: scale(2); opacity: 0;}
+}
+
+#so-section {
+
+    background-color: black;
+    color: rgb(252, 248, 138);
+    font-size: 13px;
+    display: flex; /* spreads the box to both sides of the screen */
+    flex-wrap: wrap; /* makes the bullet point go in vertical order */
+    flex-direction: column;
+    width: 97%;
+    line-height: 1.6;
+    border-radius: 20px 20px 20px 20px;
+    padding:20px;
+    margin-top: 20px;
+    box-shadow: 10px 10px 25px 9px black;
+    margin: 10px 10px;
+    border-style: solid;
+    
+    
+}
+        </style>
+
+    </head>
+    <body>
+        <p id="page-header">2023-2024 (New) F150 MHP Parts List</p>
+        <input type="text" id="search" placeholder="Enter in a part to search!" onkeyup="filterTable()">
+
+        <div id="parts-list">
+            <table id="parts-table"> 
+                <tr id="identifiers"> <!-- Header of each section -->
+                    <th>Part Number</th>
+                    <th>Part Description</th>
+                    <th id="quantity">Quantity</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>RS3000FC-LB</td>
+                    <td>Lightbar</td>
+                    <td>1</td>
+                    <td>UP\E\4</td>
+                </tr>
+                <tr>
+                    <td>TRIG</td>
+                    <td>Grille Lights (LED)</td>
+                    <td>4</td>
+                    <td>UP\A\2</td>
+                </tr>
+                <tr>
+                    <td>3RVCCDSR</td>
+                    <td>Dome Light</td>
+                    <td>1</td>
+                    <td>UP\C\1</td>
+                </tr>
+                <tr>
+                    <td>RTZ3609B</td>
+                    <td>Rear LED Lights</td>
+                    <td>2</td>
+                    <td>UP\A\4</td>
+                </tr>
+                <tr>
+                    <td>SCC35</td>
+                    <td>Siren Speaker Bracket</td>
+                    <td>1</td>
+                    <td>Down\E\7</td>
+                </tr>
+                <tr>
+                    <td>SSC35</td>
+                    <td>Siren Speaker</td>
+                    <td>1</td>
+                    <td>Down\C\2</td>
+                </tr>
+            </table>
+        </div>
+        <div id="so-section">
+            <p id="so-variant-header"><b>The following parts are to be added for Round Off Light variants:</b></p>
+            <div id="so-variant">
+                <ul>
+                    <li>ELUC6H5853E (VTX3609B Equivalent), ROI Universal Undercover LED Insert, <b>Quantity 2</b>, Outside Building</li>
+                    <li>ENGSA998CSR, (Round Off, New, 2016-2021) Siren Controller, DOI 100 Watt Dual Tone Siren Amp, <b>Quantity 1</b>, Outside Building</li>
+                    <li>AS.F895.872-1, Round Off Console Bracket, 1, Outside Surplus Building</li>
+                    <li>EMPL51656XT-3D3, Round Off Lightbar, 1, Outside Surplus Building</li>
+                </ul>
+            </div>
+        </div>
+        <button id="add-item-btn">Add New Item</button>
+        <script>
+            // Function to handle click event
+function onAddItemClick() {
+    // Call the addNewItem function with default values
+    addNewItem('Enter text', 'Enter text', 'Enter text', 'Enter text');
+}
+
+// Add a new item with specific values
+addNewItem('Enter text', 'Enter text', 'Enter Quantity', 'Enter Location');
+
+// Get the button element by its id
+var addItemButton = document.getElementById('add-item-btn');
+
+// Set the click event handler for the button
+addItemButton.onclick = onAddItemClick;
+
+// Stop the blinking effect after 3 seconds
+window.onload = function() {
+    setTimeout(function() {
+        var attentionElements = document.getElementsByClassName('attention');
+        for(var i = 0; i < attentionElements.length; i++) {
+            attentionElements[i].style.animation = 'none';
+        }
+    }, 3000);
+}
+
+function addClickListener(cell) {
+    cell.addEventListener("click", function(){
+        console.log("Cell clicked!");
+        if(this.classList.contains('strikethrough')) {
+            this.classList.remove('strikethrough');
+            this.classList.add('explode');
+            var self = this;
+            setTimeout(function(){
+                self.classList.remove('explode');
+            }, 500);
+        } else {
+            this.classList.add('strikethrough');
+        }
+    });
+}
+
+function addNewItem(partNumber, partDescription, quantity, location) {
+    // Get the table by its id
+    var partsTable = document.getElementById('parts-table');
+
+    // Create a new row at the end of the table
+    var newRow = partsTable.insertRow(-1);
+
+    // Create cells in the row
+    var partNumberCell = newRow.insertCell(0);
+    var partDescriptionCell = newRow.insertCell(1);
+    var quantityCell = newRow.insertCell(2);
+    var locationCell = newRow.insertCell(3);
+
+    // Add the text to the cells
+    partNumberCell.innerHTML = partNumber;
+    partDescriptionCell.innerHTML = partDescription;
+    quantityCell.innerHTML = quantity;
+    locationCell.innerHTML = location;
+
+    // Make cells editable
+    partNumberCell.contentEditable = "true";
+    partDescriptionCell.contentEditable = "true";
+    quantityCell.contentEditable = "true";
+    locationCell.contentEditable = "true";
+    
+    addClickListener(partNumberCell);
+    addClickListener(partDescriptionCell);
+    addClickListener(quantityCell);
+    addClickListener(locationCell);
+}
+
+function filterTable() {
+            var input = document.getElementById('search');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById('parts-table');
+            var tr = table.getElementsByTagName('tr');
+            for (var i = 1; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName('td');
+                var showRow = false;
+                for (var j = 0; j< td.length; j++) {
+                    if (td[j]) {
+                        if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            showRow = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = showRow ? "" : "none";
+            }
+        }
+
+window.onload = function() {
+    // Your existing code...
+
+    // Get all cells in the table
+    var cells = document.querySelectorAll('#parts-table td');
+
+    // Add click listener to each cell
+    for(var i = 0; i < cells.length; i++) {
+        addClickListener(cells[i]);
+    }
+}
+        </script>        
+    </body>
+</html>
